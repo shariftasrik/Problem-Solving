@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cstdio>
+using namespace std;
+
+int main() {
+    // Complete the code.
+    int a;
+    long l;
+    char ch;
+    float f;
+    double lf;
+    
+    scanf("%d %ld %c %f %lf",&a,&l,&ch,&f,&lf);
+    printf("%d\n",a);
+    printf("%ld\n",l);
+    printf("%c\n",ch);
+    printf("%f\n",f);
+    printf("%lf\n",lf);
+    
+    //cin >> a ;
+    //cin >> l ;
+    //cin >> ch ; 
+    //cin >> f ;
+    //cin >> lf ;
+    
+    //cout << a << endl << l << endl << ch << endl << f << endl << lf << endl ;
+    //cout << l << endl;
+    //cout << ch << endl;
+    //cout << f << endl;
+    //cout << d << endl;
+    
+    return 0;
+}

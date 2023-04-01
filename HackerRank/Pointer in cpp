@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+void update(int a,int b) 
+{
+    // Complete this function
+   
+    int pa,pb;
+    pa=a+b;
+    printf("%d\n",pa);
+    
+    if(a>b) 
+    {
+      pb=a-b;
+      printf("%d\n",pb);  
+    }
+    else  
+    {
+      pb=b-a;
+      printf("%d\n",pb);  
+    }    
+}
+
+int main() 
+{
+    int a,b;
+    
+    scanf("%d %d", &a, &b);
+    update(a, b);
+    
+
+    return 0;
+}
