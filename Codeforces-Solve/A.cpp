@@ -1,20 +1,32 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
 int main() {
     int t;
     cin >> t;
+
     while (t--) {
-        vector<pair<int, int>> p;
-        for (int i = 0; i < 4; i++) {
-            int a, b;
-            cin >> a >> b;
-            p.push_back(make_pair(a, b));
+        int n,count=0;
+        cin >> n;
+
+        string p;
+        cin >> p;
+
+        for(int i=0; i<n; i++)
+        {
+            if(p[i]=='@')
+                count++;
+            else if(p[i]=='@' && p[i+1]=='*')
+                count++;
+            else if(p[i]=='@' && p[i+1]=='*' && p[i+2]=='*')
+                break;
+            else if(p[i]=='*' && p[i+1]=='*')
+                break;
         }
 
-        sort(p.begin(), p.end());
 
-        cout << (long long)((p[1].second - p[0].second) * (p[2].first - p[1].first))<< endl;
+        cout << count << endl;
     }
+
     return 0;
 }
