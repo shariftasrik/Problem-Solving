@@ -1,32 +1,27 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main() {
+int main()
+{
     int t;
     cin >> t;
 
-    while (t--) {
-        int n,count=0;
-        cin >> n;
-
-        string p;
-        cin >> p;
-
-        for(int i=0; i<n; i++)
+    while(t-->0)
+    {
+        string s;
+        int count1=0,count2=0;
+        for(int i=0; i<5; i++)
         {
-            if(p[i]=='@')
-                count++;
-            else if(p[i]=='@' && p[i+1]=='*')
-                count++;
-            else if(p[i]=='@' && p[i+1]=='*' && p[i+2]=='*')
-                break;
-            else if(p[i]=='*' && p[i+1]=='*')
-                break;
+            cin >> s[i];
         }
-
-
-        cout << count << endl;
+        for(int i=0; i<5; i++)
+        {
+            if(s[i]=='A') count1++;
+            if(s[i]=='B') count2++;
+        }
+        if(count1>count2) cout << "A" << endl;
+        else cout << "B" << endl;
     }
-
     return 0;
 }
+
