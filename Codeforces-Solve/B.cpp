@@ -1,49 +1,42 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-
-
 int main() {
     int t;
     cin >> t;
 
-    while (t --> 0) {
+    while (t--) {
         int n;
         cin >> n;
 
-        vector<vector<int>> arr(n, vector<int>(n));
+        vector<int> v(n);
+        for (int i = 0; i < n; ++i)
+            cin >> v[i];
 
-        vector<string> li(n);
+        long long sum = 0;
+        for (int i = 0; i < n; ++i)
+            sum += v[i];
+
+        if (sum % 3 == 0) {
+            cout << "0" << endl;
+            continue;
+        }
+        if (sum % 3 == 2) {
+            cout << "1" << endl;
+            continue;
+        }
+        bool found = false;
         for (int i = 0; i < n; i++) {
-            cin >> li[i];
-            for (int j = 0; j < n; j++) {
-                char c = li[i][j];
-                if (c == '1') {
-                    arr[i][j] = 1;
-                } else {
-                    arr[i][j] = 0;
-                }
+            long long temp = sum - v[i];
+            if (temp % 3 == 0) {
+                cout << "1" << endl;
+                found = true;
+                break;
             }
         }
-
-        int triangle = 0;
-        for (int i = 0; i < n; i++) {
-            for (int j = 1; j < n - 1; j++) {
-                if (arr[i][j] == 1) {
-                    if (arr[i][j - 1] == 0 && arr[i][j + 1] == 0) {
-                        triangle = 1;
-                        break;
-                    }
-                }
-            }
-        }
-
-        if (triangle == 1) {
-            cout << "TRIANGLE" << endl;
-        } else {
-            cout << "SQUARE" << endl;
-        }
-
+        if (!found)
+            cout << "2" << endl;
     }
+
     return 0;
 }

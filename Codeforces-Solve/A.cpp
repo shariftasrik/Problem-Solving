@@ -8,20 +8,24 @@ int main()
 
     while(t-->0)
     {
-        string s;
-        int count1=0,count2=0;
-        for(int i=0; i<5; i++)
+        int n;
+        cin >> n;
+
+        int arr[n];
+        int sum = 0;
+        for(int i=0; i<n; i++)
         {
-            cin >> s[i];
+            cin >> arr[i];
         }
-        for(int i=0; i<5; i++)
+        for(int i=0; i<n; i++)
         {
-            if(s[i]=='A') count1++;
-            if(s[i]=='B') count2++;
+            if(arr[i]>0) sum += arr[i];
+            else if(arr[i]<0)
+            {
+                sum = sum + ((-1)*arr[i]);
+            }
         }
-        if(count1>count2) cout << "A" << endl;
-        else cout << "B" << endl;
+        cout << sum << endl;
     }
     return 0;
 }
-
