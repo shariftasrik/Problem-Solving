@@ -6,7 +6,7 @@ int main()
     int n,q;
     cin >> n >> q;
 
-    vector<int> vec[n-1];
+    vector<int> A[n];
     for(int i=0; i<q; i++)
     {
         int typ;
@@ -15,14 +15,16 @@ int main()
         if(typ == 0){
             int t,x;
             cin >> t >> x;
-            vec[t].push_back(x);
+            A[t].push_back(x);
 
         }else if(typ == 1){
             int t;
             cin >> t;
-
-            for(int a : vec[t]){
-                cout << a << " ";
+            for(int j=0; j<A[t].size(); j++){
+                cout << A[t][j];
+                if(j != A[t].size()-1){
+                    cout <<" ";
+                }
             }
             cout << endl;
 
@@ -30,7 +32,7 @@ int main()
             int t;
             cin >> t;
 
-            vec[t].clear();
+            A[t].clear();
         }
     }
     return 0;
